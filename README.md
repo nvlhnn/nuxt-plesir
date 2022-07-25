@@ -1,10 +1,13 @@
 # nuxt-plesir
 
-## access url
+## app url
 https://nuxt-plesir.vercel.app/
 
 ## backend repository
 https://github.com/nvlhnn/go-plesir
+
+## backend url
+https://go-plesir.herokuapp.com/
 
 ## content note
 all seeded content on the website are scrapped from tiket.com
