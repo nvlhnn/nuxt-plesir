@@ -51,12 +51,15 @@
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
         <p v-if="$fetchState.pending && page == 1">Fetching places...</p>
         <p v-else-if="$fetchState.error">An error occurred :(</p>
-        <PlaceCard
-          v-else
-          v-for="place in places"
-          :key="place.id"
-          :place="place"
-        />
+        <template v-else>
+          <p v-if="places.length == 0">no places to show</p>
+          <PlaceCard
+            v-else
+            v-for="place in places"
+            :key="place.id"
+            :place="place"
+          />
+        </template>
       </div>
     </div>
     <!-- </div> -->
@@ -148,6 +151,8 @@ export default {
           break
         case 'search':
           this.filter.search = event.target.value
+          this.places = []
+          // this.sort =
           break
         default:
           break
