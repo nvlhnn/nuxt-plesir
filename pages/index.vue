@@ -4,17 +4,19 @@
     <div
       class="mt-20 md:mt-0 text-center tracking-wider text-2xl text-bold capitalize"
     >
-      trending place
+      latest place
     </div>
     <div v-swiper:mySwiper="swiperOption" class="mt-5">
       <div class="swiper-wrapper">
-        <PlaceSwiper
-          class="swiper-slide"
-          v-for="place in places.data"
-          :img_url="`http://localhost:5000/borobudur.jpg`"
-          :place="place"
-          :key="place.id"
-        />
+        <template v-if="places">
+          <PlaceSwiper
+            class="swiper-slide"
+            v-for="index in 5"
+            :img_url="places.data[index].images[0]"
+            :place="places.data[index]"
+            :key="index"
+          />
+        </template>
       </div>
       <div class="swiper-pagination" slot="pagination"></div>
     </div>
