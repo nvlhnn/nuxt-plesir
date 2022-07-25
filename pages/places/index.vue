@@ -49,7 +49,7 @@
         />
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
-        <p v-if="$fetchState.pending">Fetching places...</p>
+        <p v-if="$fetchState.pending && page == 1">Fetching places...</p>
         <p v-else-if="$fetchState.error">An error occurred :(</p>
         <PlaceCard
           v-else
